@@ -1,17 +1,18 @@
 #include "stdio.h"
+#include "string.h"
 
-int main(void){
-    int lower, upper, step;
-    float fahr, celcius;
-    lower = 0; // lower limit of temperature table
-    upper = 300;
-    step = 20;
-    fahr = lower;
+int main(void)
+{
+    char arr[3][15] = {"Gero", "Mar", "Sonia Infantes"};
 
-    while (fahr <= upper) {
-        celcius = (5.0/9.0) * (fahr -32.0);
-        printf("%4.0f %6.1f\n", fahr, celcius);
-        fahr = fahr + step;
+    for (int i = 0; i < 3; i++)
+    {
+        printf("%s\n", arr[i]);
+        for (int letter = 0; letter < strlen(arr[i]); letter++){
+            printf("%c - ", arr[i][letter]);
+        }
+        printf("\n");
     }
-}
 
+    return 0;
+}
