@@ -1,18 +1,27 @@
+#define STB_DS_IMPLEMENTATION
+
 #include "stdio.h"
 #include "string.h"
+#include "stb_ds.h"
 
 int main(void)
 {
-    char arr[3][15] = {"Gero", "Mar", "Sonia Infantes"};
+    int *array = NULL;
+    arrput(array, 44);
+    arrput(array, 56);
+    arrput(array, 34);
+    arrput(array, 23);
+    arrput(array, 29);
+    printf("The length of the array is  %ld\n", arrlen(array));
 
-    for (int i = 0; i < 3; i++)
+    for (int elem = 0; elem < arrlen(array); elem++)
     {
-        printf("%s\n", arr[i]);
-        for (int letter = 0; letter < strlen(arr[i]); letter++){
-            printf("%c - ", arr[i][letter]);
-        }
-        printf("\n");
-    }
+        if (array[elem] == 23)
+        {
+            printf("ELEMENT IS 23!\n");
+            continue;
+        };
 
-    return 0;
+        printf("%d\n", array[elem]);
+    };
 }
