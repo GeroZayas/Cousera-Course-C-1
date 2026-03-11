@@ -11,6 +11,7 @@
         "new": "cpp",
         "typeinfo": "cpp",
         "stb_ds.h": "c",
-        "utility": "c"
+        "utility": "c",
+        "stdlib.h": "c"
     }
 }
