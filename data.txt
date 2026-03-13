@@ -1,0 +1,3 @@
+This is my data.
+This is the file I have just created.
+To work on C a pleasure is.

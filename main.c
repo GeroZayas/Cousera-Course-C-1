@@ -5,19 +5,16 @@
 #include "stb_ds.h"
 #include "stdlib.h"
 
-void say_hello(char *name);
-
 int main(void)
 {
-    char name[100];
-    
-    fgets(name, sizeof(name), stdin);
-    name[strcspn(name, "\n")] = '\0';
-    
-    say_hello(name);
-}
+    FILE *file = fopen("data.txt", "r");
+    char line[256];
 
-void say_hello(char *name)
-{
-    printf("Yo! What is up!? %s\n", name);
+    while (fgets(line, sizeof(line), file) != NULL)
+    {
+        printf("%s", line);
+    }
+
+    fclose(file);
+    return 0;
 }
