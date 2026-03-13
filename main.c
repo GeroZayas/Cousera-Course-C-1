@@ -7,14 +7,8 @@
 
 int main(void)
 {
-    FILE *file = fopen("data.txt", "r");
-    char line[256];
-
-    while (fgets(line, sizeof(line), file) != NULL)
-    {
-        printf("%s", line);
-    }
-
-    fclose(file);
-    return 0;
+    char buffer[100];
+    printf("Enter text: ");
+    fgets(buffer, sizeof(buffer), stdin);
+    printf("You wrote: %s", buffer);
 }
