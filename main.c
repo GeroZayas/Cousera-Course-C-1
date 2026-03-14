@@ -7,8 +7,14 @@
 
 int main(void)
 {
-    char buffer[100];
-    printf("Enter text: ");
-    fgets(buffer, sizeof(buffer), stdin);
-    printf("You wrote: %s", buffer);
+
+    int arr[10];
+
+    for (size_t i = 0; i < 10; i++)
+    {
+        arr[i] = (int)i;
+        printf("%i\n", arr[i]);
+    }
+
+    return 0;
 }
