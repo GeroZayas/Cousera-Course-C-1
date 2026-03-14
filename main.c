@@ -5,16 +5,21 @@
 #include "stb_ds.h"
 #include "stdlib.h"
 
+int power(int x, int y);
+
 int main(void)
 {
+    int result = power(2, 20);
+    printf("%i\n", result);
+}
 
-    int arr[10];
+int power(int num, int power)
+{
 
-    for (size_t i = 0; i < 10; i++)
+    int count;
+    for (count = 1; power > 0; --power)
     {
-        arr[i] = (int)i;
-        printf("%i\n", arr[i]);
+        count = count * num;
     }
-
-    return 0;
+    return count;
 }
