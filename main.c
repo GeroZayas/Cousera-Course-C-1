@@ -1,25 +1,14 @@
-#define STB_DS_IMPLEMENTATION
+#include <stdio.h>
 
-#include "stdio.h"
-#include "string.h"
-#include "stb_ds.h"
-#include "stdlib.h"
-
-int power(int x, int y);
+// print('Enter line')
+// line = input()
+// print('Line:', line)
 
 int main(void)
 {
-    int result = power(2, 20);
-    printf("%i\n", result);
-}
+    printf("Enter line\n");
 
-int power(int num, int power)
-{
-
-    int count;
-    for (count = 1; power > 0; --power)
-    {
-        count = count * num;
-    }
-    return count;
+    char line[256];
+    fgets(line, sizeof(line), stdin);
+    printf("Line %s\n", line);
 }
