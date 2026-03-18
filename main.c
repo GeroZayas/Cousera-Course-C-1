@@ -2,46 +2,40 @@
 #include <string.h>
 #include <stdlib.h>
 
-// maxval = None
-// minval = None
 // while True:
-//     line = input()
+//     try:
+//         line = input()
+//     except:  # If we get EOF
+//         break
 //     line = line.strip()
-//     if line == "done" : break
-//     ival = int(line)
-//     if ( maxval is None or ival > maxval) :
-//         maxval = ival
-//     if ( minval is None or ival < minval) :
-//         minval = ival
-
-// print('Maximum', maxval)
-// print('Minimum', minval)
+//     guess = int(line)
+//     if guess == 42:
+//         print('Nice work!')
+//         break
+//     elif guess < 42 :
+//         print('Too low - guess again')
+//     else :
+//         print('Too high - guess again')
 
 int main(void)
-{
-    char line[1000];
-    // int maxval, minval = 0;
-
-    int maxval = 0;
-    int minval = 0;
+{   
+    char line[100];
 
     while (gets(line) != NULL)
     {
-        line[strcspn(line, "\n")] = '\0';
-
-        if (strcmp(line, "done") == 0)
+        int guess = atoi(line);
+        if (guess == 42)
+        {
+            printf("Nice work!\n");
             break;
-
-        int ival = atoi(line);
-        if (maxval == 0 || ival > maxval)
-        {
-            maxval = ival;
         }
-        if (minval == 0 || ival < minval)
+        else if (guess < 42)
         {
-            minval = ival;
+            printf("Too low - guess again\n");
+        }
+        else
+        {
+            printf("Too high - guess again\n");
         }
     }
-    printf("Maximum %d\n", maxval);
-    printf("Minimum %d\n", minval);
 }
